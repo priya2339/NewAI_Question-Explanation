@@ -39,7 +39,7 @@ async function getExplanation() {
   output.innerText = "Loading...";
 
   try {
-    const response = await fetch("new-ai-question-explanation.vercel.app", {
+    const response = await fetch("http://localhost:3000/api", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

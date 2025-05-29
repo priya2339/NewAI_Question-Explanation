@@ -44,7 +44,7 @@ app.use(express.static(path.join(__dirname, "../frontend")));
 
 
 app.get("/", (req, res) => {
-  console.log('Server is running....')
+  res.status(200).send('Hello from the server.')
 });
 
 app.listen(port, () => {

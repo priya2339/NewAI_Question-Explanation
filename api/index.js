@@ -20,7 +20,6 @@ mongoose.connect(process.env.MONGO_URI)
   });
 
 
-  const app = require('./server'); // this refers to your Express app
 const serverless = require('serverless-http');
 
 module.exports = serverless(app);
@@ -39,10 +38,14 @@ app.use("/api", aiRoutes);
 // Serve frontend
 app.use(express.static(path.join(__dirname, "../frontend")));
 
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "../frontend/index.html"));
-});
+// app.get("/", (req, res) => {
+//   res.sendFile(path.join(__dirname, "../frontend/index.html"));
+// });
 
+
+app.get("/", (req, res) => {
+  console.log('Server is running....')
+});
 
 app.listen(port, () => {
   console.log(`✅ Server running at http://localhost:${port}`);

@@ -19,9 +19,6 @@ mongoose.connect(process.env.MONGO_URI)
     console.error("❌ MongoDB connection error:", err.message);
   });
 
-
-const serverless = require('serverless-http');
-
 module.exports = serverless(app);
 
 
